@@ -34,3 +34,51 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+import "../App.css";
+import { useNavigate } from "react-router-dom";
+
+function AdminDashboard() {
+  const navigate = useNavigate();
+  const handleViewEmployees = () => {
+    navigate("/viewemployees");
+  };
+  const handlefetchloans = () => {
+    navigate("/fetchloancard");
+  };
+  const handlefetchitems = () => {
+    navigate("/viewitems");
+  };
+
+  return (
+    <div className="admin-dashboard">
+      <h1>Admin Dashboard</h1>
+      <div className="button-container">
+        <button className="dashboard-button" onClick={handleViewEmployees}>
+          Customer Data Management
+        </button>
+        <button className="dashboard-button" onClick={handlefetchloans}>
+          Loan Card Management
+        </button>
+        <button className="dashboard-button" onClick={handlefetchitems}>
+          Item Master Data
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default AdminDashboard;
